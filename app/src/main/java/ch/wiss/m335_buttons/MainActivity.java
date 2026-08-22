@@ -1,4 +1,4 @@
-package ch.wiss.m335.buttons;
+package ch.wiss.m335_buttons;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity
         findViewById(R.id.btnGreet).setOnClickListener(this);
         findViewById(R.id.btnCount).setOnClickListener(this);
         findViewById(R.id.btnClear).setOnClickListener(this);
+        findViewById(R.id.btnReverse).setOnClickListener(this);
     }
 
     @Override
@@ -49,17 +50,24 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.btnGreet) {
             Log.d(TAG, "Greet clicked. Name: " + name);
+            Log.d(TAG, "Name length: " + name.length());
             tvOutput.setText("Hallo " + name + "!");
-            Toast.makeText(this, "Hallo " + name + "!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Hallo " + name + "!", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.btnCount) {
             Log.d(TAG, "Count clicked.");
             tvOutput.setText("Dein Name hat " + name.length() + " Zeichen.");
+            Toast.makeText(this, "Dein Name hat " + name.length() + " Zeichen.", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.btnClear) {
             Log.d(TAG, "Clear clicked.");
             etName.setText("");
             tvOutput.setText("");
+            Toast.makeText(this, "Gelöscht.", Toast.LENGTH_SHORT).show();
+
+        } else if (id == R.id.btnReverse) {
+            Log.d(TAG, "Reverse clicked.");
+            tvOutput.setText(new StringBuilder(name).reverse().toString());
+            Toast.makeText(this, new StringBuilder(name).reverse().toString(), Toast.LENGTH_SHORT).show();
         }
     }
-}
