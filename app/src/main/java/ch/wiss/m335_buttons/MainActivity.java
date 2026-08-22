@@ -71,3 +71,4 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(this, new StringBuilder(name).reverse().toString(), Toast.LENGTH_SHORT).show();
         }
     }
+}
