@@ -1,4 +1,4 @@
-package ch.wiss.m335_buttons;
+package ch.wiss.m335.buttons;
 
 import android.os.Bundle;
 import android.util.Log;
